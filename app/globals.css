@@ -121,6 +121,12 @@ img { display: block; max-width: 100%; }
   font-size: 0.84rem; color: var(--warm); transition: color 0.3s var(--ease);
 }
 .quick a:hover { color: var(--bone); }
+.hero__more { display: flex; flex-wrap: wrap; align-items: center; gap: 0.2rem 1.6rem; }
+.ig {
+  display: inline-flex; align-items: center; gap: 0.5rem; min-height: 44px;
+  font-size: 0.84rem; color: var(--warm); transition: color 0.3s var(--ease);
+}
+.ig:hover { color: var(--bone); }
 .explore {
   display: inline-flex; align-items: center; min-height: 44px;
   font-size: 0.72rem; font-weight: 500; letter-spacing: 0.3em; color: var(--bone);

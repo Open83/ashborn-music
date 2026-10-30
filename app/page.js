@@ -45,7 +45,15 @@ export default function Page() {
                   </li>
                 ))}
               </ul>
-              <a className="explore" href="#message">{hero.secondary}</a>
+              <div className="hero__more">
+                <a className="explore" href="#message">{hero.secondary}</a>
+                {site.instagram && (
+                  <a className="ig" href={site.instagram} target="_blank" rel="noopener noreferrer">
+                    <PlatformIcon id="instagram" size={16} />
+                    <span>Instagram</span>
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         </section>
