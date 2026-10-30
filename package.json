@@ -1,0 +1,25 @@
+{
+  "name": "ashborn-marathon",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Official landing page for ASHBORN's debut single, MARATHON.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && node scripts/static-finish.mjs",
+    "images": "node scripts/optimize-images.mjs",
+    "check:links": "node scripts/check-links.mjs",
+    "check:build": "node scripts/check-build.mjs"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "next": "^16.4.3",
+    "postcss": "^8.5.32",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.5"
+  },
+  "type": "module"
+}
