@@ -5,8 +5,10 @@ import path from "node:path";
 import { createRequire } from "node:module";
 import { pathToFileURL } from "node:url";
 
+import { resolveSiteUrl, siteUrlSource } from "../lib/site-url.js";
+
 const OUT = "out";
-const SITE = (process.env.NEXT_PUBLIC_SITE_URL || "").replace(/\/+$/, "");
+const SITE = resolveSiteUrl() || "";
 const html = await readFile(path.join(OUT, "index.html"), "utf8");
 
 let failed = 0;
@@ -32,8 +34,13 @@ const supplied = [
   "https://music.apple.com/in/album/marathon-single/6827332319",
   "https://youtu.be/MlyVV1kXXsE",
 ];
-const hrefs = [...new Set([...html.matchAll(/<a\b[^>]*target="_blank"[^>]*href="([^"]+)"|<a\b[^>]*href="([^"]+)"[^>]*target="_blank"/g)].map((m) => m[1] || m[2]))];
+const INSTAGRAM = "https://www.instagram.com/_sureshbhandari_"; // supplied by the owner, without the ?rpxt tracking parameter
+const external = [...new Set([...html.matchAll(/<a\b[^>]*target="_blank"[^>]*href="([^"]+)"|<a\b[^>]*href="([^"]+)"[^>]*target="_blank"/g)].map((m) => m[1] || m[2]))];
+const hrefs = external.filter((u) => !/^https:\/\/www\.instagram\.com\//.test(u));
 check(hrefs.length === 3 && supplied.every((u) => hrefs.includes(u)), "exactly the three supplied streaming URLs", hrefs.join(" | "));
+const social = external.filter((u) => /^https:\/\/www\.instagram\.com\//.test(u));
+check(social.length === 1 && social[0] === INSTAGRAM, "exactly one Instagram link, as supplied and without tracking parameters", social.join(" | "));
+check(!/rpxt=|utm_|igsh=|fbclid=/.test(html), "no tracking parameters in any link");
 check(!/<a\b[^>]*target="_blank"(?![^>]*noopener)/.test(html), "external links carry rel=noopener");
 
 // Social metadata
@@ -43,13 +50,13 @@ for (const [attr, name] of [["property", "og:title"], ["property", "og:descripti
 check(meta("name", "twitter:card") === "summary_large_image", "twitter:card is summary_large_image");
 
 if (!SITE) {
-  console.log("\nNEXT_PUBLIC_SITE_URL is not set: checking that URL-dependent tags are absent rather than invented.");
+  console.log("\nNo site origin configured: checking that URL-dependent tags are absent rather than invented.");
   check(!link("canonical"), "no canonical URL");
   check(!meta("property", "og:url"), "no og:url");
   check(!meta("property", "og:image"), "no og:image");
   check(!meta("name", "twitter:image"), "no twitter:image");
 } else {
-  console.log(`\nNEXT_PUBLIC_SITE_URL=${SITE}: checking absolute URLs.`);
+  console.log(`\nSite origin ${SITE} (from ${siteUrlSource()}): checking absolute URLs.`);
   check(link("canonical") === SITE, "canonical equals the site origin", link("canonical"));
   check(meta("property", "og:url") === SITE, "og:url equals the site origin", meta("property", "og:url"));
   const img = meta("property", "og:image");

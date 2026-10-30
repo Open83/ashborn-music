@@ -122,6 +122,11 @@ export default function Page() {
                   <a href={p.url} target="_blank" rel="noopener noreferrer">{p.name}</a>
                 </li>
               ))}
+              {site.instagram && (
+                <li>
+                  <a href={site.instagram} target="_blank" rel="noopener noreferrer">Instagram</a>
+                </li>
+              )}
             </ul>
           </div>
         </section>

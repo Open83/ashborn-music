@@ -1,3 +1,5 @@
+import { resolveSiteUrl, siteUrlSource } from "./lib/site-url.js";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export", // static site: no server, free to host anywhere
@@ -6,11 +8,14 @@ const nextConfig = {
   images: { unoptimized: true }, // images are pre-optimised by scripts/optimize-images.mjs
 };
 
-if (!process.env.NEXT_PUBLIC_SITE_URL) {
+const siteUrl = resolveSiteUrl();
+if (siteUrl) {
+  console.log(`[ashborn] Site origin: ${siteUrl} (from ${siteUrlSource()})`);
+} else {
   console.warn(
-    "\n[ashborn] NEXT_PUBLIC_SITE_URL is not set. The canonical URL, og:url and the absolute " +
-      "Open Graph / Twitter image URLs are left out. Set it to the verified production origin " +
-      "(for example https://your-domain) before launch.\n",
+    "\n[ashborn] No site origin is configured. The canonical URL, og:url and the absolute Open Graph / Twitter " +
+      "image URLs are left out. Set NEXT_PUBLIC_SITE_URL to the verified production origin (on Vercel, " +
+      "VERCEL_PROJECT_PRODUCTION_URL is used automatically) before launch.\n",
   );
 }
 

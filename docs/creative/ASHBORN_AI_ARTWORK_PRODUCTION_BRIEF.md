@@ -396,7 +396,7 @@ Photographer hiring and quotations · technical feasibility with a photographer 
 | 40 | The runner-and-shattered-clock poster is the approved landing-page campaign hero, unchanged. FILAMENT is unchanged | Approved (owner decision, 2026-10-30) |
 | 41 | The poster is a recorded landing-page exception to the running-imagery, no-people, consistency-with-FILAMENT and exploration-round rules. They stay in force for the master | Approved (owner decision, 2026-10-30) |
 | 42 | Owner-supplied landing-page copy and restrained lyric fragments. Full lyrics not approved for publication | Approved (copy and fragments). Full lyrics Not approved |
-| 43 | Provenance of the poster, production domain and a verified Instagram profile URL | Pending |
+| 43 | Provenance of the poster and the production domain. The Instagram profile URL was supplied on 2026-10-30 and is in use | Pending (provenance, domain) |
 
 ## 16. Next milestone and checklist
 

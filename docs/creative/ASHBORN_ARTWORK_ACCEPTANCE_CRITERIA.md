@@ -122,7 +122,8 @@ This does not decide what appears on streaming platforms. Whether a new distribu
 | Recorded exceptions | For this poster only, on the landing page: the rejection of running imagery, the no-people rule, the consistency-with-FILAMENT requirement, and the separate exploration round after Gate 2 do not apply. All of them remain in force for the FILAMENT master. The round still applies to any further landing-page visual |
 | Owner-supplied landing-page copy | Recorded as the owner's words, not written by Claude Code: the message passage ("You spent your whole life running. …"), the supporting line "Some distances stay with you.", the closing statement "Some things don't leave. They just become part of the distance.", and the labels DEBUT SINGLE · OUT NOW, LISTEN TO MARATHON and EXPLORE THE STORY. The rejected headline "NOT A SPRINT. A MARATHON." stays rejected |
 | Lyrics on the website | Restrained fragments only, exactly as in section 3.1, with spelling and wording unaltered. The owner named four candidate fragments. **Full lyrics are not approved for publication** |
-| Still missing | The production domain, a verified Instagram profile URL, and the poster's provenance. None is invented |
+| Instagram | The owner supplied a profile URL on 2026-10-30 (`https://www.instagram.com/_sureshbhandari_`, tracking parameter removed). Its bio reads "Ashborn". It is shown as a quiet link in the closing section. Ownership is not independently verified |
+| Still missing | The production domain and the poster's provenance. None is invented |
 
 ## 4. The artwork must be a work of art
 
@@ -501,7 +502,7 @@ The master poster cannot receive final approval until **all** of the following a
 | 49 | The poster is a deliberate landing-page exception to the running-imagery, no-people, consistency-with-FILAMENT and exploration-round rules. Those rules stay in force for the master | Approved (owner decision, 2026-10-30) |
 | 50 | Owner-supplied landing-page copy (message passage, supporting line, closing statement, button labels) recorded as the owner's words | Approved (owner decision, 2026-10-30) |
 | 51 | Restrained lyric fragments on the website, exactly as in section 3.1. Full lyrics not approved for publication | Fragments Approved. Full lyrics **Not approved** |
-| 52 | Provenance of the poster (how it was made, tool, plan and applicable terms), the production domain and a verified Instagram profile URL | Pending |
+| 52 | Provenance of the poster (how it was made, tool, plan and applicable terms) and the production domain. The Instagram profile URL was supplied on 2026-10-30 and is in use (section 3.4) | Pending (provenance, domain) |
 
 ## 15. Migration log
 
