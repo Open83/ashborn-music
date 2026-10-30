@@ -48,9 +48,25 @@ export default function Page() {
               <div className="hero__more">
                 <a className="explore" href="#message">{hero.secondary}</a>
                 {site.instagram && (
-                  <a className="ig" href={site.instagram} target="_blank" rel="noopener noreferrer">
-                    <PlatformIcon id="instagram" size={16} />
-                    <span>Instagram</span>
+  <a
+    className="ig-link"
+    href={site.instagram}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Follow ASHBORN on Instagram (opens in a new tab)"
+  >
+    <span className="ig-link__icon">
+      <PlatformIcon id="instagram" size={19} />
+    </span>
+
+    <span className="ig-link__copy">
+      <span className="ig-link__eyebrow">CONNECT WITH THE ARTIST</span>
+      <span className="ig-link__label">FOLLOW ASHBORN</span>
+    </span>
+
+    <span className="ig-link__arrow" aria-hidden="true">↗</span>
+  </a>
+)}
                   </a>
                 )}
               </div>
